@@ -32,22 +32,23 @@ on:
 #           echo Add other actions to build,
 #           echo test, and deploy your project.
 
-  imagetest:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+  jobs:
+    build:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
 
-    container: khronosgroup/docker-images:vulkan-docs-base
+      container: khronosgroup/docker-images:vulkan-docs-base
 
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
 
-      # See what's there
-      - name: Test container contents
-        run: |
-          echo In container, uname is
-          uname -a
-          echo Path is
-          /bin/pwd
-          echo Files are
-          ls -F
+        # See what's there
+        - name: Test container contents
+          run: |
+            echo In container, uname is
+            uname -a
+            echo Path is
+            /bin/pwd
+            echo Files are
+            ls -F
