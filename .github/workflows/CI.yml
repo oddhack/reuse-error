@@ -52,3 +52,5 @@ jobs:
           /bin/pwd
           echo Files are
           ls -F
+          echo asciidoctor version is
+          asciidoctor --version
