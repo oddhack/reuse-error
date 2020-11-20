@@ -32,7 +32,11 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
   imagetest:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
     container: khronosgroup/vulkan-docs-base
+
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
